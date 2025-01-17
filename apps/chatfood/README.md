@@ -8,7 +8,7 @@ Deadline: Feb 2025
 
 ---
 
-stack: 
+stacks: 
 - langGraph
 - LanceDB
 - Tavily
