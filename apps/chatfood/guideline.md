@@ -20,6 +20,8 @@ And also if the query isn't related to application purpose, it shouldn't be answ
 - use **Hybrid Retrieval** for retrieving information from DB.
 
 
+---
+
 ## part 2: customer services
 
 - managing orders
@@ -47,3 +49,24 @@ managing possible scenarios like:
 - entering wrong information or incomplete information
 
 in this scenario bot should repeat the request for entering information
+
+
+---
+
+
+## part 3: food search
+
+In this section, users can use the food search engine or food ordering application to find information about the foods available in the restaurants. The search includes items such as the name of the food, the restaurant name, or a combination of them. The food should be able to record user messages and provide relevant results based on the search engine. The answers are given in a natural and engaging way.
+
+#### tips:
+
+- users can search foods via natural language
+- search fields: food name, restaurant name, or both of them
+- chatfood should understand possible queries and give appropriate answer.
+
+
+#### technical tips:
+
+- we should use food_search(food_name=None, restaurant_name=None)
+- approach: extract info(food name , restaurant name) from user query and send to the search function
+- the answer should be natural language.(use LLM for generating answer)
