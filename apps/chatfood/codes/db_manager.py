@@ -5,6 +5,13 @@ import atexit
 
 # atexit.register(lambda: connection.close())
 
+def fetch_all_foods():
+    connection = sqlite3.connect('food_orders.db')
+    cursor = connection.cursor()
+    cursor.execute("SELECT id, food_name, food_category, restaurant_name, price FROM foods")
+    results = cursor.fetchall()
+    return results
+
 
 
 def food_search(food_name=None, restaurant_name=None, max_distance=1):

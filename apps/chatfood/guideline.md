@@ -70,3 +70,30 @@ In this section, users can use the food search engine or food ordering applicati
 - we should use food_search(food_name=None, restaurant_name=None)
 - approach: extract info(food name , restaurant name) from user query and send to the search function
 - the answer should be natural language.(use LLM for generating answer)
+
+
+---
+
+
+## Part 4: Food Recommendation  
+
+This section helps users choose their favorite food based on their taste and preferences, especially when they are unsure of what they want.  
+
+You can draw inspiration from these architectures to create a multi-step process for food recommendation:  
+- **ReAct**  
+- **Reflexion**  
+- **Plan and Execute**  
+
+Food recommendations are based on:  
+- The model's internal knowledge  
+- User inputs  
+- Checking available food options  
+
+In this section, **ChatFood** should analyze user needs, identify suitable food options, and verify their availability. If the recommended option is unavailable, it should provide alternative suggestions. Similarly, if the user does not like a recommendation, the system should offer another option.  
+
+### Technical Tips:  
+- Use **Reflexion** or **Plan and Execute** to simulate the thought process and model analysis.  
+- Implement **structured outputs** to ensure the model's responses are well-organized and facilitate seamless communication between different internal system components.  
+- Recommendations should primarily be based on information retrieved from existing databases.  
+
+---  
