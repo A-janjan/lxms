@@ -1,1 +1,4 @@
 .lancedb
+.files
+.chainlit
+__pycache__
