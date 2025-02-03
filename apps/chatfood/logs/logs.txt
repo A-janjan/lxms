@@ -1,0 +1,365 @@
+---------------------------------------------- CASE 1 ----------------------------------------------------------------------
+
+initial state:
+{'user_query': "I'm craving a spicy fast food meal. What do you recommend?", 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning="The query mentions 'fast food meal', which is a type of food service often associated with restaurants, but the primary focus is on 'spicy fast food', indicating a stronger connection to the type of food rather than the restaurant itself." is_related_flag=True
+--- INTENT IDENTIFY ---
+----------------- SUMMARIZING ---------------------------
+Based on your request for a spicy fast food meal, I've curated a list of popular options that fit your criteria. Here are some recommendations:
+
+1. **Spicy Chicken Sandwich** from Burger Barn (ID: 12) - This sandwich features a spicy chicken patty, topped with lettuce, tomato, and mayo, all served on a toasted bun. ($7.99)
+2. **Beef Nachos** from Taco Stand (ID: 192) - A platter of tortilla chips smothered in spicy beef, melted cheese, jalapenos, and salsa. ($9.49)
+3. **Chicken Tikka Masala Wrap** from Spice Route (ID: 54) - A flavorful wrap filled with spicy chicken tikka masala, basmati rice, and crispy onions, all wrapped in a warm naan bread. ($13.49)
+4. **Spicy Tuna Roll** from Sushi Bar (ID: 128) - A spicy tuna roll made with sushi-grade tuna, mixed with sriracha and mayo, topped with toasted sesame seeds and sliced jalapenos. ($8.99)
+5. **Korean Fried Chicken** from Seoul Garden (ID: 115) - Double-fisted, crispy fried chicken tossed in a spicy Korean chili flake called gochugaru, served with a side of pickled radishes. ($11.99)
+
+These options match your preferences because they are all fast food meals that incorporate spicy elements, such as spicy chicken, beef, or tuna, and are priced reasonably. You can choose one that suits your taste buds and budget.
+
+Please note that prices may vary depending on the location and availability of the items. Enjoy your spicy fast food meal!
+final answer:
+----------------------------------
+final state:
+{'user_query': "I'm craving a spicy fast food meal. What do you recommend?", 'rewritten_query': '"I\'m looking for a spicy fast food meal recommendation, can you suggest some popular options?"', 'need_internet_search': None, 'search_results': None, 'final_answer': "Based on your request for a spicy fast food meal, I've curated a list of popular options that fit your criteria. Here are some recommendations:\n\n1. **Spicy Chicken Sandwich** from Burger Barn (ID: 12) - This sandwich features a spicy chicken patty, topped with lettuce, tomato, and mayo, all served on a toasted bun. ($7.99)\n2. **Beef Nachos** from Taco Stand (ID: 192) - A platter of tortilla chips smothered in spicy beef, melted cheese, jalapenos, and salsa. ($9.49)\n3. **Chicken Tikka Masala Wrap** from Spice Route (ID: 54) - A flavorful wrap filled with spicy chicken tikka masala, basmati rice, and crispy onions, all wrapped in a warm naan bread. ($13.49)\n4. **Spicy Tuna Roll** from Sushi Bar (ID: 128) - A spicy tuna roll made with sushi-grade tuna, mixed with sriracha and mayo, topped with toasted sesame seeds and sliced jalapenos. ($8.99)\n5. **Korean Fried Chicken** from Seoul Garden (ID: 115) - Double-fisted, crispy fried chicken tossed in a spicy Korean chili flake called gochugaru, served with a side of pickled radishes. ($11.99)\n\nThese options match your preferences because they are all fast food meals that incorporate spicy elements, such as spicy chicken, beef, or tuna, and are priced reasonably. You can choose one that suits your taste buds and budget.\n\nPlease note that prices may vary depending on the location and availability of the items. Enjoy your spicy fast food meal!", 'bad_state': None, 'query_intent': 'food_analysis_suggest', 'previous_chats_summary': "There is no previous chat summary to draw from, so the conversation begins with the user's query for a spicy fast food meal recommendation. The user is looking for popular options that fit their criteria of being spicy and from a fast food establishment. In response, a list of recommendations is provided, including the Spicy Chicken Sandwich from Burger Barn, Beef Nachos from Taco Stand, Chicken Tikka Masala Wrap from Spice Route, Spicy Tuna Roll from Sushi Bar, and Korean Fried Chicken from Seoul Garden, all of which incorporate spicy elements and are reasonably priced. These options are suggested as they match the user's preferences, with prices ranging from $7.99 to $13.49, and the user is advised to choose one that suits their taste buds and budget, noting that prices may vary depending on location and availability."}
+
+
+
+-------------------------------------------------- CASE 2 ------------------------------------------------------------------------
+
+initial state:
+{'user_query': 'What are Brussels sprouts?', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning='The query asks about Brussels sprouts, which is a type of vegetable and a common food item, indicating that the query is related to food.' is_related_flag=True
+--- INTENT IDENTIFY ---
+---Node Query Rewrite---
+Raw rewritten query from LLM: Brussels sprouts definition
+Sanitized query: Brussels sprouts definition
+---Node Search the book---
+---Node Generate Answer---
+----------------- SUMMARIZING ---------------------------
+final answer:
+Brussels sprouts are a type of green vegetable that belongs to the cabbage family. They are characterized by their compact, firm heads with bright, dark-green leaves. These vegetables are not only delicious but also packed with nutrients, including vitamins K and C, as well as natural chemicals like mustard oils and chlorophyll. They are a popular ingredient in many recipes and are often roasted, steamed, or sautéed to bring out their unique flavor and texture.
+----------------------------------
+final state:
+{'user_query': 'What are Brussels sprouts?', 'rewritten_query': 'Brussels sprouts definition', 'need_internet_search': False, 'search_results': AIMessage(content='The context provided does not explicitly define what Brussels sprouts are, but based on the information given, it can be inferred that Brussels sprouts are a type of green vegetable, likely a cultivar of cabbage, characterized by their compact, firm heads with bright, dark-green leaves. They are rich in vitamins, particularly vitamin K and vitamin C, and contain natural chemicals like mustard oils and chlorophyll.', additional_kwargs={'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 82, 'prompt_tokens': 864, 'total_tokens': 946, 'completion_tokens_details': None, 'prompt_tokens_details': None}, 'model_name': 'meta-llama/Llama-3.3-70B-Instruct-Turbo', 'system_fingerprint': None, 'finish_reason': 'eos', 'logprobs': None}, id='run-be98e1bc-12ff-4851-a9c4-51b89e51607b-0', usage_metadata={'input_tokens': 864, 'output_tokens': 82, 'total_tokens': 946, 'input_token_details': {}, 'output_token_details': {}}), 'final_answer': 'Brussels sprouts are a type of green vegetable that belongs to the cabbage family. They are characterized by their compact, firm heads with bright, dark-green leaves. These vegetables are not only delicious but also packed with nutrients, including vitamins K and C, as well as natural chemicals like mustard oils and chlorophyll. They are a popular ingredient in many recipes and are often roasted, steamed, or sautéed to bring out their unique flavor and texture.', 'bad_state': None, 'query_intent': 'general_food', 'previous_chats_summary': "There is no previous chat summary to draw from, so the conversation begins with the user's query about the definition of Brussels sprouts. The user sought information on what Brussels sprouts are, indicating an interest in understanding this type of vegetable. The final answer provided explains that Brussels sprouts are a green vegetable belonging to the cabbage family, characterized by their compact, firm heads and dark-green leaves, and are rich in nutrients like vitamins K and C, making them a nutritious and popular ingredient in various recipes, often prepared through roasting, steaming, or sautéing to enhance their flavor and texture."}
+
+
+
+
+
+
+-------------------------------------------------- CASE 3 --------------------------------------------------------------------------
+
+
+initial state:
+{'user_query': 'How to bake a chocolate cake?', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning='The query mentions baking a chocolate cake, which is a specific type of food and a common dessert item often served in restaurants or made at home. The query is focused on the preparation method of a particular food item, indicating a strong relation to food.' is_related_flag=True
+--- INTENT IDENTIFY ---
+---Node Query Rewrite---
+Raw rewritten query from LLM: Here's a rewritten query suitable for search engines:
+
+"chocolate cake recipe" or "how to make a chocolate cake"
+Sanitized query: Here's a rewritten query suitable for search engines
+
+chocolate cake recipe or how to make a chocolate cake
+---Node Search the book---
+---Node Generate Answer---
+----------------- SUMMARIZING ---------------------------
+final answer:
+To bake a delicious chocolate cake, you'll need to follow a simple recipe and some helpful tips. Here's a step-by-step guide to get you started:
+
+Ingredients:
+- 2 cups of all-purpose flour
+- 1 teaspoon of baking soda
+- 1 teaspoon of salt
+- 1 cup of granulated sugar
+- 1/2 cup of unsweetened cocoa powder
+- 1 cup of whole milk, at room temperature
+...
+Remember, practice makes perfect, so don't be discouraged if your first attempt doesn't turn out exactly as you hoped. Keep trying, and you'll soon be baking delicious chocolate cakes like a pro!
+----------------------------------
+final state:
+{'user_query': 'How to bake a chocolate cake?', 'rewritten_query': "Here's a rewritten query suitable for search engines\n\nchocolate cake recipe or how to make a chocolate cake", 'need_internet_search': False, 'search_results': AIMessage(content='The context provided is related to cooking and preparing chocolate, as well as its properties and characteristics. The query "chocolate cake recipe or how to make a chocolate cake" is directly related to the context, which discusses the preparation of chocolate cake, including the importance of using acidic ingredients like buttermilk or sour cream to balance the pH of the chocolate. \n\nTo make a chocolate cake, you would typically need to melt the chocolate, mix it with other ingredients like flour, sugar, and eggs, and then leaven it with baking soda. The context also provides tips on how to melt chocolate without burning it and how to choose high-quality chocolate. \n\nHowever, the context does not provide a specific recipe for chocolate cake. For a detailed recipe, you may need to consult a cookbook or a reliable online recipe source.', additional_kwargs={'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 165, 'prompt_tokens': 802, 'total_tokens': 967, 'completion_tokens_details': None, 'prompt_tokens_details': None}, 'model_name': 'meta-llama/Llama-3.3-70B-Instruct-Turbo', 'system_fingerprint': None, 'finish_reason': 'eos', 'logprobs': None}, id='run-e91478ed-5282-4600-bb54-aed0331e94fc-0', usage_metadata={'input_tokens': 802, 'output_tokens': 165, 'total_tokens': 967, 'input_token_details': {}, 'output_token_details': {}}), 'final_answer': "To bake a delicious chocolate cake, you'll need to follow a simple recipe and some helpful tips. Here's a step-by-step guide to get you started:\n\nIngredients:\n- 2 cups of all-purpose flour\n- 1 teaspoon of baking soda\n- 1 teaspoon of salt\n- 1 cup of granulated sugar\n- 1/2 cup of unsweetened cocoa powder\n- 1 cup of whole milk, at room temperature\n- 2 large eggs, at room temperature\n- 1 teaspoon of vanilla extract\n- 1/2 cup of melted unsalted chocolate (cooled slightly)\n\nInstructions:\n1. Preheat your oven to 350°F (180°C) and grease two 9-inch (23cm) round cake pans.\n2. In a medium bowl, whisk together flour, baking soda, and salt. Set aside.\n3. In a large mixing bowl, combine sugar, cocoa powder, and melted chocolate. Mix until well combined.\n4. Add the milk, eggs, and vanilla extract to the chocolate mixture. Mix until smooth.\n5. Gradually add the flour mixture to the chocolate mixture, mixing until just combined.\n6. Divide the batter evenly between the prepared pans and smooth the tops.\n7. Bake for 30-35 minutes or until a toothpick inserted in the center comes out clean.\n8. Remove from the oven and let the cakes cool in the pans for 10 minutes before transferring them to a wire rack to cool completely.\n\nTips:\n- Use high-quality chocolate for the best flavor.\n- Don't overmix the batter, as this can result in a dense cake.\n- If you're using buttermilk or sour cream, make sure to adjust the amount of liquid in the recipe accordingly.\n- To melt chocolate without burning it, use a double boiler or microwave-safe bowl in short increments, stirring between each interval.\n\nRemember, practice makes perfect, so don't be discouraged if your first attempt doesn't turn out exactly as you hoped. Keep trying, and you'll soon be baking delicious chocolate cakes like a pro!", 'bad_state': None, 'query_intent': 'general_food', 'previous_chats_summary': "There is no previous chat summary to draw from, so the conversation begins with the user's query about a chocolate cake recipe or how to make a chocolate cake. The user is seeking a step-by-step guide to baking a delicious chocolate cake. The final answer provided includes a detailed recipe with ingredients such as flour, sugar, cocoa powder, and melted chocolate, along with instructions for preparation and baking, including preheating the oven, mixing the batter, and cooling the cakes. Additionally, tips are offered for achieving the best flavor and texture, such as using high-quality chocolate and avoiding overmixing the batter. With this information, the user is equipped to attempt baking a chocolate cake and can refine their technique with practice."}
+
+
+
+
+-------------------------------------------------------- CASE 4 ------------------------------------------------------------------------
+
+
+initial state:
+{'user_query': 'what is the location of Iran?', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning='The query is asking about the location of a country, Iran, and does not mention any specific restaurant or type of food.' is_related_flag=False
+---Node Generate Answer---
+sorry i can't give services.
+----------------- SUMMARIZING ---------------------------
+final answer:
+Not related Query!
+----------------------------------
+final state:
+{'user_query': '', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'final_answer': 'Not related Query!', 'bad_state': True, 'previous_chats_summary': 'There is no previous chat summary to draw from, and the user query is also not available. However, the conversation concluded with a final answer stating "Not related Query!", indicating a potential mismatch or lack of relevance between the intended query and the provided response, suggesting that the user\'s inquiry may not have been addressed as expected.'}
+
+
+
+
+------------------------------------------------------------- CASE 5 ---------------------------------------------------------------------------------------
+
+
+
+initial state:
+{'user_query': 'what is the pasta?', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning="The query mentions 'pasta', which is a type of food, indicating that it is related to food rather than a specific restaurant." is_related_flag=True
+--- INTENT IDENTIFY ---
+---Node Query Rewrite---
+Raw rewritten query from LLM: "Pasta definition" or "What is pasta?"
+Sanitized query: Pasta definition or What is pasta
+---Node Search the book---
+---Node Generate Answer---
+----------------- SUMMARIZING ---------------------------
+final answer:
+Pasta is a type of food made from basic ingredients, including water and flour or semolina, which is the coarsely milled inner part of the wheat kernel. It can also be made with additional ingredients such as eggs, dried spinach, or soy flour to create different types of pasta, including egg noodles, spinach pasta, and high-protein pasta.
+----------------------------------
+final state:
+{'user_query': 'what is the pasta?', 'rewritten_query': 'Pasta definition or What is pasta', 'need_internet_search': False, 'search_results': AIMessage(content='Pasta is a type of food made from basic ingredients including water and flour or semolina (the coarsely milled inner part of the wheat kernel). It can also be made with additional ingredients such as eggs, dried spinach, or soy flour to create different types of pasta, including egg noodles, spinach pasta, and high-protein pasta.', additional_kwargs={'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 71, 'prompt_tokens': 922, 'total_tokens': 993, 'completion_tokens_details': None, 'prompt_tokens_details': None}, 'model_name': 'meta-llama/Llama-3.3-70B-Instruct-Turbo', 'system_fingerprint': None, 'finish_reason': 'eos', 'logprobs': None}, id='run-99d705b3-8f92-4508-a0e1-19cbda70f86f-0', usage_metadata={'input_tokens': 922, 'output_tokens': 71, 'total_tokens': 993, 'input_token_details': {}, 'output_token_details': {}}), 'final_answer': 'Pasta is a type of food made from basic ingredients, including water and flour or semolina, which is the coarsely milled inner part of the wheat kernel. It can also be made with additional ingredients such as eggs, dried spinach, or soy flour to create different types of pasta, including egg noodles, spinach pasta, and high-protein pasta.', 'bad_state': None, 'query_intent': 'general_food', 'previous_chats_summary': "There is no previous chat summary to draw from, so the conversation begins with the user's query about the definition of pasta. The user asked for information on what pasta is, seeking a clear understanding of this food type. In response, it was explained that pasta is a type of food made from basic ingredients, including water and flour or semolina, which is the coarsely milled inner part of the wheat kernel, and can also be made with additional ingredients such as eggs, dried spinach, or soy flour to create different types of pasta."}
+
+
+
+
+--------------------------------------------------------------------- CASE 6 ---------------------------------------------------------------------------------
+
+
+initial state:
+{'user_query': 'What kind of food is Ghorme Sabzi?', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning='The query asks about the type of food Ghorme Sabzi is, which indicates it is inquiring about a specific dish, thus relating to food.' is_related_flag=True
+--- INTENT IDENTIFY ---
+---Node Query Rewrite---
+Raw rewritten query from LLM: "Ghormeh sabzi recipe" or "What is Ghormeh sabzi"
+Sanitized query: Ghormeh sabzi recipe or What is Ghormeh sabzi
+---Node Search the book---
+---Node Search Internet---
+Search results:
+[{'url': 'https://www.allrecipes.com/recipe/257499/ghormeh-sabzi-persian-herb-stew/', 'content': "Ghormeh sabzi is a delicious Persian beef and kidney bean stew loaded with greens and fresh herbs like spinach, cilantro, fenugreek, and parsley. ... The Allrecipes Test Kitchen staff are a team of culinary pros who make and vet recipes using only equipment you'd find in a home kitchen. Staff credentials vary but include training at the"}, {'url': 'https://cookingwithsamira.com/ghormeh-sabzi-recipe/', 'content': 'Ghormeh Sabzi Recipe (Persian Herb Stew) Home main dishes Ghormeh Sabzi Recipe (Persian Herb Stew) Ghormeh Sabzi Recipe (Persian Herb Stew) If you are familiar with Iranian cuisine, you know that Khoresh Ghormeh Sabzi, or Persian herb stew is one of the most popular dishes in Iran. To make Ghormeh Sabzi, tender chunks of beef or lamb, red kidney beans, finely chopped, and sauteed fragrant herbs are simmered to perfection for about 3-4 hours. In order to thicken your Ghormeh Sabzi stew, you must chop the herbs very finely. If you are familiar with Iranian cuisine, you know that Khoresh Ghormeh Sabzi, or Persian herb stew is one of the most popular dishes in Iran.'}, {'url': 'https://cookingwithayeh.com/ghormeh-sabzi-persian-herb-stew/', 'content': "Ghormeh Sabzi - Persian Herb Stew (Authentic Meat-Free) - Cooking With Ayeh Ghormeh Sabzi - Persian Herb Stew Ghormeh Sabzi is a traditional Persian herb stew, and one of the most popular dishes in Persian cuisine. How to make Ghormeh Sabzi (Persian Herb Stew) How to make Ghormeh Sabzi (Persian Herb Stew) What is Ghormeh Sabzi made of?It's made with a variety of fresh herbs that have been fried and slowly simmered with spices, red kidney beans, dried limes and fenugreek, developing a deep green color. Ghormeh Sabzi - Persian Herb Stew (Authentic Meat-Free) Ghormeh Sabzi is a traditional Persian herb stew and one of the most popular dishes in Persian cuisine."}]
+---Node Generate Answer---
+----------------- SUMMARIZING ---------------------------
+final answer:
+Ghorme Sabzi, also known as Persian Herb Stew, is a traditional Persian dish made with a variety of fresh herbs, such as spinach, cilantro, fenugreek, and parsley, that are fried and slowly simmered with spices, red kidney beans, and dried limes. The stew can be made with or without meat, such as beef or lamb, and is typically cooked for 3-4 hours to develop a deep green color and rich flavor. It's a popular and delicious dish in Iranian cuisine.
+----------------------------------
+final state:
+{'user_query': 'What kind of food is Ghorme Sabzi?', 'rewritten_query': 'Ghormeh sabzi recipe or What is Ghormeh sabzi', 'need_internet_search': True, 'search_results': '[{\'url\': \'https://www.allrecipes.com/recipe/257499/ghormeh-sabzi-persian-herb-stew/\', \'content\': "Ghormeh sabzi is a delicious Persian beef and kidney bean stew loaded with greens and fresh herbs like spinach, cilantro, fenugreek, and parsley. ... The Allrecipes Test Kitchen staff are a team of culinary pros who make and vet recipes using only equipment you\'d find in a home kitchen. Staff credentials vary but include training at the"}, {\'url\': \'https://cookingwithsamira.com/ghormeh-sabzi-recipe/\', \'content\': \'Ghormeh Sabzi Recipe (Persian Herb Stew) Home main dishes Ghormeh Sabzi Recipe (Persian Herb Stew) Ghormeh Sabzi Recipe (Persian Herb Stew) If you are familiar with Iranian cuisine, you know that Khoresh Ghormeh Sabzi, or Persian herb stew is one of the most popular dishes in Iran. To make Ghormeh Sabzi, tender chunks of beef or lamb, red kidney beans, finely chopped, and sauteed fragrant herbs are simmered to perfection for about 3-4 hours. In order to thicken your Ghormeh Sabzi stew, you must chop the herbs very finely. If you are familiar with Iranian cuisine, you know that Khoresh Ghormeh Sabzi, or Persian herb stew is one of the most popular dishes in Iran.\'}, {\'url\': \'https://cookingwithayeh.com/ghormeh-sabzi-persian-herb-stew/\', \'content\': "Ghormeh Sabzi - Persian Herb Stew (Authentic Meat-Free) - Cooking With Ayeh Ghormeh Sabzi - Persian Herb Stew Ghormeh Sabzi is a traditional Persian herb stew, and one of the most popular dishes in Persian cuisine. How to make Ghormeh Sabzi (Persian Herb Stew) How to make Ghormeh Sabzi (Persian Herb Stew) What is Ghormeh Sabzi made of?It\'s made with a variety of fresh herbs that have been fried and slowly simmered with spices, red kidney beans, dried limes and fenugreek, developing a deep green color. Ghormeh Sabzi - Persian Herb Stew (Authentic Meat-Free) Ghormeh Sabzi is a traditional Persian herb stew and one of the most popular dishes in Persian cuisine."}]', 'final_answer': "Ghorme Sabzi, also known as Persian Herb Stew, is a traditional Persian dish made with a variety of fresh herbs, such as spinach, cilantro, fenugreek, and parsley, that are fried and slowly simmered with spices, red kidney beans, and dried limes. The stew can be made with or without meat, such as beef or lamb, and is typically cooked for 3-4 hours to develop a deep green color and rich flavor. It's a popular and delicious dish in Iranian cuisine.", 'bad_state': None, 'query_intent': 'general_food', 'previous_chats_summary': "There is no previous chat summary to draw from, so the conversation begins with the user's query about Ghormeh sabzi, seeking either a recipe or information on what the dish is. The user's intent is to learn about this traditional Persian dish, and the final answer provided explains that Ghormeh sabzi, or Persian Herb Stew, is a traditional dish made with fresh herbs, spices, red kidney beans, and dried limes, which can be cooked with or without meat and is known for its deep green color and rich flavor after a slow 3-4 hour cooking process."}
+
+
+
+--------------------------------------------------------------- CASE 7 ------------------------------------------------------------------------------
+
+initial state:
+{'user_query': 'why is the sky blue?', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning="The query 'why is the sky blue?' is a scientific question unrelated to restaurants or food, as it inquires about the color of the sky, which is a natural phenomenon." is_related_flag=False
+---Node Generate Answer---
+sorry i can't give services.
+----------------- SUMMARIZING ---------------------------
+final answer:
+Not related Query!
+----------------------------------
+final state:
+{'user_query': '', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'final_answer': 'Not related Query!', 'bad_state': True, 'previous_chats_summary': 'There is no previous chat summary to draw from, and the user query is also not available. However, the final answer provided is "Not related Query!", indicating a conclusion that the query, when it was made, was not relevant to the expected topic or context. This suggests an interaction where the user\'s input was assessed as not aligning with the anticipated discussion or question scope, leading to a determination of irrelevance.'}
+
+
+
+------------------------------------------------------------------ CASE 8 ---------------------------------------------------------------------------------
+
+
+initial state:
+{'user_query': 'I want to know the status of order number 456.', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning="The query mentions an 'order number', which is a term commonly used in the context of restaurants or food delivery services to track a customer's purchase. This implies that the query is related to a transaction involving food or a restaurant." is_related_flag=True
+--- INTENT IDENTIFY ---
+------------ node order operation --------------------
+------------- getting info from user -------------------
+enter phone number: 2223334444
+enter order id: 5
+-------------- check order status -----------------------
+Order ID 5 from is currently in 'preparation' status.
+-----------------------------------------------------------
+----------------- SUMMARIZING ---------------------------
+final answer:
+Order ID 5 from is currently in 'preparation' status.
+----------------------------------
+final state:
+{'user_query': 'I want to know the status of order number 456.', 'rewritten_query': 'Rewritten Query: "What is the current status of my order with the number 456?"', 'need_internet_search': None, 'search_results': None, 'final_answer': "Order ID 5 from is currently in 'preparation' status.", 'bad_state': None, 'query_intent': 'order_operation', 'user_phone_num': '2223334444', 'user_order_id': '5', 'order_operation': 'check_order_status', 'previous_chats_summary': "There is no previous chat summary to draw from, so the conversation begins with the user's inquiry about the status of their order, specifically asking about the current status of order number 456. The user's intent is to obtain an update on the progress of their order. The final answer provided is that Order ID 5 is currently in 'preparation' status, however, it seems there might be a discrepancy as the user inquired about order number 456, not Order ID 5."}
+
+
+
+------------------------------------------------------------------- CASE 9 -----------------------------------------------------------------------------------------
+
+
+initial state:
+{'user_query': 'I want to know the status of order number 456.', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning="The query mentions an 'order number', which is a term commonly associated with purchasing or placing orders, often related to restaurants or food delivery services. However, the query itself does not explicitly mention food or a restaurant, but given the context of order numbers, it is more likely related to food or restaurant services than not." is_related_flag=True
+--- INTENT IDENTIFY ---
+------------ node order operation --------------------
+------------- getting info from user -------------------
+please enter your phone number: (10 digit)
+and also please enter your order id:
+-------------- check order status -----------------------
+Order ID 10 does not exist or it is unrelated to your phone number.
+-----------------------------------------------------------
+----------------- SUMMARIZING ---------------------------
+final answer:
+Order ID 10 does not exist or it is unrelated to your phone number.
+----------------------------------
+final state:
+{'user_query': 'I want to know the status of order number 456.', 'rewritten_query': 'Rewritten Query: "What is the current status of my order with the number 456?"', 'need_internet_search': None, 'search_results': None, 'final_answer': 'Order ID 10 does not exist or it is unrelated to your phone number.', 'bad_state': None, 'query_intent': 'order_operation', 'user_phone_num': '1234567890', 'user_order_id': '10', 'order_operation': 'check_order_status', 'previous_chats_summary': "There is no previous chat summary to draw from, indicating the start of a new conversation. The user inquired about the current status of their order, specifically referencing order number 456, seeking an update on its progress. However, the final answer revealed that Order ID 10, which was presumably the order in question despite the discrepancy in order numbers, does not exist or is unrelated to the user's phone number, effectively resolving the query by indicating the order could not be found or verified."}
+
+
+
+------------------------------------------------------------------------------ CASE 10 -------------------------------------------------------------------------
+
+
+
+initial state:
+{'user_query': 'I want to cancel my order.', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning="The query mentions 'cancel my order', which is a common action related to restaurants or food delivery services, implying that the user has placed an order that they now wish to cancel." is_related_flag=True
+--- INTENT IDENTIFY ---
+------------ node order operation --------------------
+------------- getting info from user -------------------
+enter phone number: 4327651091
+enter order id: 72
+----- order cancelation --------
+Order ID 72 from 432-765-1091 cannot be canceled as it is in 'delivered' status.
+---------------------------------
+----------------- SUMMARIZING ---------------------------
+final answer:
+Order ID 72 from 432-765-1091 cannot be canceled as it is in 'delivered' status.
+----------------------------------
+final state:
+{'user_query': 'I want to cancel my order.', 'rewritten_query': 'Rewritten Query: "How do I cancel my existing order, and what are the necessary steps to complete the cancellation process?"', 'need_internet_search': None, 'search_results': None, 'final_answer': "Order ID 72 from 432-765-1091 cannot be canceled as it is in 'delivered' status.", 'bad_state': None, 'query_intent': 'order_operation', 'user_phone_num': '4327651091', 'user_order_id': '72', 'order_operation': 'cancel_order', 'previous_chats_summary': "There is no previous chat summary to draw from, so the conversation begins with the user's query about canceling their existing order and the necessary steps to complete the cancellation process. The user sought guidance on how to proceed with the cancellation, indicating a desire to reverse or stop their order. However, the final answer provided indicates that Order ID 72 from 432-765-1091 cannot be canceled as it is in 'delivered' status, effectively resolving the user's query by stating that cancellation is not possible due to the order's current status."}
+
+
+
+------------------------------------------------------------------------ CASE 11 --------------------------------------------------------------------------------
+
+
+initial state:
+{'user_query': 'I want to cancel my order.', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning="The query mentions 'cancel my order', which is a common action associated with food delivery or takeout services often provided by restaurants, suggesting a relation to restaurants or foods." is_related_flag=True
+--- INTENT IDENTIFY ---
+------------ node order operation --------------------
+------------- getting info from user -------------------
+please enter your phone number: (10 digit) 9872106544
+and also please enter your order id: 57
+----- order cancelation --------
+Order ID 57 from 987-210-6544 has been successfully canceled.
+---------------------------------
+----------------- SUMMARIZING ---------------------------
+final answer:
+Order ID 57 from 987-210-6544 has been successfully canceled.
+----------------------------------
+final state:
+{'user_query': 'I want to cancel my order.', 'rewritten_query': 'Rewritten Query: "How do I cancel my existing order, and what are the next steps to confirm the cancellation?"', 'need_internet_search': None, 'search_results': None, 'final_answer': 'Order ID 57 from 987-210-6544 has been successfully canceled.', 'bad_state': None, 'query_intent': 'order_operation', 'user_phone_num': '9872106544', 'user_order_id': '57', 'order_operation': 'cancel_order', 'previous_chats_summary': "There is no previous chat summary to draw from, so the conversation begins with the user's query to cancel their existing order and confirm the cancellation process. The user sought guidance on the steps required to cancel their order, indicating a need to reverse a prior purchase decision. The final resolution provided was that Order ID 57 from 987-210-6544 has been successfully canceled, thereby addressing the user's request and completing the cancellation process."}
+
+
+
+-------------------------------------------------------------------------- CASE 12 ------------------------------------------------------------------------------------
+
+
+initial state:
+{'user_query': 'Which restaurants currently have Ghormeh Sabzi, and how much does it cost?', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning="The query mentions 'Ghormeh Sabzi', which is a type of Iranian stew, indicating it's related to food. However, it also asks about 'restaurants', which shows it's inquiring about places that serve food. Therefore, the query is related to both restaurants and food, but given the choices, it leans more towards being related to restaurants because it specifically asks which ones are serving the dish." is_related_flag=True
+--- INTENT IDENTIFY ---
+------------ node search food ---------------------
+----------------- SUMMARIZING ---------------------------
+final answer:
+It looks like you're looking for some Persian food options. We have a few dishes that match your search. You can find Ghormeh Sabzi at Rumi for $13.99, or Khoresht-e Ghormeh Sabzi and Gormeh Sabzi at Golestan Restaurant for $13.99 and $14.99, respectively. We also have Gaz at Zand Cafe for $3.49. If you're open to other options, we have Pho at Pho House for $9.99, which is a Vietnamese dish. Which one of these options sounds good to you?
+----------------------------------
+final state:
+{'user_query': 'Which restaurants currently have Ghormeh Sabzi, and how much does it cost?', 'rewritten_query': 'Rewritten Query: "What restaurants currently have Ghormeh Sabzi on their menu, and what is the price range for this dish?"', 'need_internet_search': None, 'search_results': None, 'final_answer': "It looks like you're looking for some Persian food options. We have a few dishes that match your search. You can find Ghormeh Sabzi at Rumi for $13.99, or Khoresht-e Ghormeh Sabzi and Gormeh Sabzi at Golestan Restaurant for $13.99 and $14.99, respectively. We also have Gaz at Zand Cafe for $3.49. If you're open to other options, we have Pho at Pho House for $9.99, which is a Vietnamese dish. Which one of these options sounds good to you?", 'bad_state': None, 'query_intent': 'search_food_restaurant', 'previous_chats_summary': "There is no previous chat summary to draw from, so the conversation begins with the user's query about finding restaurants that currently have Ghormeh Sabzi on their menu and the price range for this dish. The user is looking for Persian food options, specifically Ghormeh Sabzi, and is interested in knowing the prices. The final answer provides options at Rumi for $13.99, Golestan Restaurant for $13.99 and $14.99, and also mentions a Vietnamese dish alternative, Pho at Pho House for $9.99, giving the user a range of choices to consider for their dining needs."}
+
+
+
+
+------------------------------------------------------------------------- CASE 13 ------------------------------------------------------------------------------------------
+
+initial state:
+{'user_query': 'What is the price of the Pirroni pizza at Milad and Sons Restaurant?', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning="The query mentions a specific pizza, 'Pirroni pizza', and a restaurant name, 'Milad and Sons Restaurant', indicating it is related to both food and a restaurant. However, since it specifically asks about the price of a food item at a particular restaurant, it leans more towards being related to food pricing at a specific restaurant." is_related_flag=True
+--- INTENT IDENTIFY ---
+------------ node search food ---------------------
+----------------- SUMMARIZING ---------------------------
+final answer:
+I'm here to help you, but it seems like we didn't find any matching results. Can you please provide more information or clarify what you're looking for? I'll do my best to assist you.
+----------------------------------
+final state:
+{'user_query': 'What is the price of the Pirroni pizza at Milad and Sons Restaurant?', 'rewritten_query': 'Rewritten Query: "What is the current price of the Pirroni pizza on the menu at Milad and Sons Restaurant?"', 'need_internet_search': None, 'search_results': None, 'final_answer': "I'm here to help you, but it seems like we didn't find any matching results. Can you please provide more information or clarify what you're looking for? I'll do my best to assist you.", 'bad_state': None, 'query_intent': 'search_food_restaurant', 'previous_chats_summary': 'There is no previous chat summary to draw from. The user inquired about the current price of the Pirroni pizza on the menu at Milad and Sons Restaurant, seeking specific pricing information. However, the query did not yield a definitive answer, and it was suggested that the user provide more information or clarify their request to facilitate a more accurate response.'}
+
+
+----------------------------------------------------------------------------- CASE 14 --------------------------------------------------------------------------------------
+
+initial state:
+{'user_query': 'what is the price of Pizza at Pizza Hub?', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning="The query mentions 'Pizza' which is a type of food and 'Pizza Hub' which sounds like a restaurant name, indicating that the query is related to both food and a restaurant, but primarily focuses on the price of a specific food item at a specific restaurant." is_related_flag=True
+--- INTENT IDENTIFY ---
+------------ node search food ---------------------
+----------------- SUMMARIZING ---------------------------
+final answer:
+I found a match for you. We have a Pizza option available at Pizza Hub, which is classified as fast food, and it's priced at $8.99. Would you like to know more about this option or proceed with ordering?
+----------------------------------
+final state:
+{'user_query': 'what is the price of Pizza at Pizza Hub?', 'rewritten_query': 'Rewritten Query: "What is the current price of a pizza at Pizza Hub?"', 'need_internet_search': None, 'search_results': None, 'final_answer': "I found a match for you. We have a Pizza option available at Pizza Hub, which is classified as fast food, and it's priced at $8.99. Would you like to know more about this option or proceed with ordering?", 'bad_state': None, 'query_intent': 'search_food_restaurant', 'previous_chats_summary': "There is no previous chat summary to draw from, so the conversation begins with the user's query about the current price of a pizza at Pizza Hub. The user sought to obtain the pricing information for a pizza at this specific establishment. In response, it was found that Pizza Hub offers a pizza option classified as fast food, priced at $8.99, with the user being given the opportunity to either learn more about this option or proceed with placing an order."}
+
+
+------------------------------------------------------------------------- CASE 15 ------------------------------------------------------------------------------------
+
+
+initial state:
+{'user_query': 'I want a pizza.', 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning="The query mentions 'pizza', which is a type of food, indicating that the user is looking for a specific food item." is_related_flag=True
+--- INTENT IDENTIFY ---
+------------ node search food ---------------------
+----------------- SUMMARIZING ---------------------------
+final answer:
+You're looking for pizza options. We have several restaurants that serve pizza, including Slice of Heaven, Pizza Paradise, Cheesy Delights, Urban Pizzeria, Bella Napoli, Fire Brick Pizza, Golden Crust, Mama Mia's, Pizza Hub, Slice Street, and Pizza Place. Prices vary, ranging from $8.99 at Pizza Hub and Pizza Place, to $14.99 at Mama Mia's. If you're interested in a veggie pizza, Pizza Place offers one for $9.99. Which one of these options sounds good to you?
+----------------------------------
+final state:
+{'user_query': 'I want a pizza.', 'rewritten_query': 'Rewritten Query: "I would like to order a pizza, can you assist me with the process or provide options?"', 'need_internet_search': None, 'search_results': None, 'final_answer': "You're looking for pizza options. We have several restaurants that serve pizza, including Slice of Heaven, Pizza Paradise, Cheesy Delights, Urban Pizzeria, Bella Napoli, Fire Brick Pizza, Golden Crust, Mama Mia's, Pizza Hub, Slice Street, and Pizza Place. Prices vary, ranging from $8.99 at Pizza Hub and Pizza Place, to $14.99 at Mama Mia's. If you're interested in a veggie pizza, Pizza Place offers one for $9.99. Which one of these options sounds good to you?", 'bad_state': None, 'query_intent': 'search_food_restaurant', 'previous_chats_summary': "There is no previous chat summary to draw from, so the conversation begins with the user's query to order a pizza and request assistance with the process or options. The user is looking to place a pizza order and is seeking guidance on available choices. In response, several pizza restaurants are suggested, including Slice of Heaven, Pizza Paradise, Cheesy Delights, Urban Pizzeria, Bella Napoli, Fire Brick Pizza, Golden Crust, Mama Mia's, Pizza Hub, Slice Street, and Pizza Place, with prices ranging from $8.99 to $14.99, and a specific veggie pizza option at Pizza Place for $9.99, leaving the user to decide on the most suitable option."}
+
+
+
+----------------------------------------------------------------------- CASE 16 ------------------------------------------------------------------------------------------
+
+
+initial state:
+{'user_query': "I'm craving a spicy fast food meal. What do you recommend?", 'rewritten_query': None, 'need_internet_search': None, 'search_results': None, 'bad_state': None, 'final_answer': None, 'previous_chats_summary': None}
+-----Is Related-----
+reasoning="The query mentions 'fast food meal', which is a type of food service typically offered by restaurants, and asks for a recommendation, implying a desire for suggestions on what to eat, which is related to both food and restaurants, but since it specifically asks for a type of meal, it leans more towards food." is_related_flag=True
+--- INTENT IDENTIFY ---
+----------------- SUMMARIZING ---------------------------
+final answer:
+Based on your request for spicy fast food meal options, I've compiled a list of recommendations that fit your criteria. Here are a few options that are readily available:
+
+1. **Beef Nachos** from Taco Stand ($9.49) - A spicy and satisfying option that combines seasoned beef, tortilla chips, and melted cheese.
+2. **Spicy Tuna Roll** from Sushi Bar ($8.99) - A spicy twist on the classic tuna roll, with a kick of heat from the wasabi and sriracha.
+3. **Chicken Shawarma Plate** from Falafel House ($9.99) - A flavorful and spicy option that features marinated chicken, served with a side of tangy tahini sauce.
+4. **Beef Enchiladas** from Taco Stand ($8.99) - A spicy and savory option that combines seasoned beef, tortillas, and melted cheese, topped with a spicy enchilada sauce.
+5. **Spicy Beef Ramen** from Tempura Time ($12.49) - A hearty and spicy option that features a rich beef broth, topped with sliced beef, vegetables, and a sprinkle of red pepper flakes.
+
+These options match your preferences for spicy fast food meal options because they all feature bold and spicy flavors, and are readily available at various fast food restaurants. Whether you're in the mood for something classic and comforting, or adventurous and bold, these options are sure to satisfy your cravings.
+
+Note: Prices may vary depending on location and availability.
+----------------------------------
+final state:
+{'user_query': "I'm craving a spicy fast food meal. What do you recommend?", 'rewritten_query': 'Rewritten Query: "Can you recommend spicy fast food meal options that are readily available?"', 'need_internet_search': None, 'search_results': None, 'final_answer': "Based on your request for spicy fast food meal options, I've compiled a list of recommendations that fit your criteria. Here are a few options that are readily available:\n\n1. **Beef Nachos** from Taco Stand ($9.49) - A spicy and satisfying option that combines seasoned beef, tortilla chips, and melted cheese.\n2. **Spicy Tuna Roll** from Sushi Bar ($8.99) - A spicy twist on the classic tuna roll, with a kick of heat from the wasabi and sriracha.\n3. **Chicken Shawarma Plate** from Falafel House ($9.99) - A flavorful and spicy option that features marinated chicken, served with a side of tangy tahini sauce.\n4. **Beef Enchiladas** from Taco Stand ($8.99) - A spicy and savory option that combines seasoned beef, tortillas, and melted cheese, topped with a spicy enchilada sauce.\n5. **Spicy Beef Ramen** from Tempura Time ($12.49) - A hearty and spicy option that features a rich beef broth, topped with sliced beef, vegetables, and a sprinkle of red pepper flakes.\n\nThese options match your preferences for spicy fast food meal options because they all feature bold and spicy flavors, and are readily available at various fast food restaurants. Whether you're in the mood for something classic and comforting, or adventurous and bold, these options are sure to satisfy your cravings.\n\nNote: Prices may vary depending on location and availability.", 'bad_state': None, 'query_intent': 'food_analysis_suggest', 'previous_chats_summary': "There is no previous chat summary to draw from, so the conversation begins with the user's query for spicy fast food meal options that are readily available. The user sought recommendations for fast food meals that fit their criteria of being spicy and easily accessible. In response, a list of recommendations was provided, including options such as Beef Nachos from Taco Stand, Spicy Tuna Roll from Sushi Bar, Chicken Shawarma Plate from Falafel House, Beef Enchiladas from Taco Stand, and Spicy Beef Ramen from Tempura Time, all of which feature bold and spicy flavors and are available at various fast food restaurants, with prices varying depending on location and availability."}
+
+
+================================================================================== END ======================================================================================

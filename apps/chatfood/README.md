@@ -8,7 +8,14 @@ Deadline: Feb 2025
 
 ---
 
-stacks: 
+How to run project:
+
+install dependencies: `$ pip install requiremenets.txt` 
+run: `$ chainlit run app.py`
+
+---
+
+### stacks: 
 - langGraph
 - LanceDB
 - Tavily
@@ -78,3 +85,8 @@ examples:
 recommended UI: **chainlit**
 
 ---
+
+
+### Graph of Components
+
+![graph](assets/graph.png)

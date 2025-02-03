@@ -135,7 +135,7 @@ def comment_order(order_id, person_name ,comment):
     return f"Comment for Order ID {order_id} from {person_name} has been updated."
 
 
-def check_order_status(order_id):
+def check_order_status(order_id, phone_number):
     """
     Check the status of an order.
     :param connection: SQLite database connection
@@ -145,10 +145,10 @@ def check_order_status(order_id):
     connection = sqlite3.connect('food_orders.db')
     cursor = connection.cursor()
     
-    cursor.execute("SELECT status FROM food_orders WHERE id = ?", (order_id,))
+    cursor.execute("SELECT status FROM food_orders WHERE id = ? AND person_phone_number = ?", (order_id, phone_number))
     result = cursor.fetchone()
     connection.close()
     if result is None:
-        return f"Order ID {order_id} does not exist."
+        return f"Order ID {order_id} does not exist or it is unrelated to your phone number."
     
     return f"Order ID {order_id} from is currently in '{result[0]}' status."
