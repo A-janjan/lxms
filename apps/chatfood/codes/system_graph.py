@@ -1,3 +1,4 @@
+import chainlit as cl
 from dotenv import load_dotenv
 import os
 from langgraph.graph import StateGraph, START, END
@@ -22,9 +23,8 @@ from langchain_openai import ChatOpenAI
 from typing import TypedDict, Optional
 
 
-
 # Disables logging to LangSmith
-os.environ["LANGCHAIN_TRACING_V2"] = "false"  
+os.environ["LANGCHAIN_TRACING_V2"] = "false"
 # Disables all LangChain telemetry
 os.environ["LANGCHAIN_ENABLED"] = "no"
 
@@ -221,47 +221,30 @@ def node_search_internet(state: MyState) -> MyState:
     return state
 
 
-import asyncio
-from typing import AsyncGenerator
-
-# Change the function signature to be asynchronous and return an async generator.
-async def node_generate_answer(state: MyState) -> AsyncGenerator[MyState, None]:
+def node_generate_answer(state: MyState) -> MyState:
     """
-    Generates a final answer based on the original user query and the search results,
-    streaming tokens as they are generated.
+    Generates a final answer based on the original user query and the search results.
     """
     print("---Node Generate Answer---")
     user_query = state["user_query"]
     search_info = state.get("search_results", "No search results found.")
-    
+
     try:
         if not state["bad_state"]:
-            # Initialize an empty answer accumulator.
-            final_answer = ""
-            # Call your LLM's async streaming API.
-            # The prompt combines the user's query and search results.
-            prompt = (
-                f"User's query: {user_query}\n\n"
-                f"Search results:\n{search_info}\n\n"
+            final_answer = llm.invoke(
+                f"User's query: {user_query}\n\nSearch results:\n{
+                    search_info}\n\n"
                 "Please provide a helpful answer."
             )
-            # Assume llm.astream() is an async generator that yields token chunks.
-            async for token in llm.astream(prompt):
-                final_answer += token
-                # Yield an update (partial answer) wrapped in a dictionary.
-                # Depending on your graph, you might yield the full state or only the update.
-                yield {"final_answer": token}
-            # After streaming is done, update the state with the complete answer.
-            state["final_answer"] = final_answer
+            state["final_answer"] = final_answer.content
         else:
-            print("Sorry, I can't provide services.")
+            print("sorry i can't give services.")
             state["final_answer"] = "Not related Query!"
-            yield state  # Yield the final state immediately.
     except Exception as e:
         print(f"Error during answer generation: {e}")
         state["final_answer"] = "Sorry, there was an issue generating the answer."
-        yield state
 
+    return state
 
 
 class IsRelated(BaseModel):
@@ -454,58 +437,61 @@ def node_searching_food(state: MyState):
     return state
 
 
-def node_extract_info_from_user_query(state: MyState):
+async def node_extract_info_from_user_query(state: MyState):
     print("------------- getting info from user -------------------")
-    inputs_are_ok = False
-    query = ""
-    validated_phone_number = ""
-    validated_order_id = ""
-    print("please enter your phone number: (10 digit)")
-    phone_num = input()
-    query += "phone_number: " + phone_num + "\n"
-    print("and also please enter your order id:")
-    order_id = input()
-    query += "order_id: " + order_id
+    
+    # Ask for phone number
+    phone_response = await cl.AskUserMessage(content="📞 Please enter your phone number (10 digits):", timeout=300).send()
+    print("DEBUG: phone_response =", phone_response)  # Debugging
+    phone_number = phone_response.get("output", "").strip()  # Extract safely
+
+    # Ask for order ID
+    order_response = await cl.AskUserMessage(content="🆔 Please enter your order ID:", timeout=300).send()
+    print("DEBUG: order_response =", order_response)  # Debugging
+    order_id = order_response.get("output", "").strip()  # Extract safely
+
+    query = f"phone_number: {phone_number}\norder_id: {order_id}"
 
     extractor_prompt = f"""Extract the phone number and order ID from the query.\n query: \n{query}\n\n
     Validate the phone number to ensure it is in a valid format (e.g., 10 digits for standard phone numbers).
     Validate the order ID to ensure it meets the required format (e.g., alphanumeric, specific length).
     Return the output in the format: phone_number-order_id. If either the phone number or order ID is invalid,
-    return invalid for that field. do not write explanation or anything more."""
+    return invalid for that field. Do not write an explanation or anything more."""
 
     extraction_result = llm.invoke(extractor_prompt)
+    print("DEBUG: extraction_result =", extraction_result)  # Debugging
+
     pattern = r"^(?P<phone_number>(\d{10}|invalid))-(?P<order_id>([A-Za-z0-9]+|invalid))$"
     match = re.match(pattern, extraction_result.content)
-    if match:
-        validated_phone_number = match.group("phone_number")
-        validated_order_id = match.group("order_id")
-        if validated_phone_number != 'invalid' and validated_order_id != 'invalid':
-            inputs_are_ok = True
 
-    while not inputs_are_ok:
-        query = ""
-        print("Your input is not valid, be careful and enter again:")
-        print("enter phone number: ")
-        phone_num = input()
-        query += "phone_number: " + phone_num + "\n"
-        print("enter order id: ")
-        order_id = input()
-        query += "order_id: " + order_id
-        extractor_prompt = f"""Extract the phone number and order ID from the query.\n query: \n{query}\n\n
-        Validate the phone number to ensure it is in a valid format (e.g., 10 digits for standard phone numbers).
-        Validate the order ID to ensure it meets the required format (e.g., alphanumeric, specific length).
-        Return the output in the format: phone_number-order_id. If either the phone number or order ID is invalid,
-        return invalid for that field. do not write explanation or anything more."""
+    validated_phone_number = match.group(
+        "phone_number") if match else "invalid"
+    validated_order_id = match.group("order_id") if match else "invalid"
+
+    while validated_phone_number == "invalid" or validated_order_id == "invalid":
+        await cl.Message(content="❌ Invalid input. Please try again.").send()
+
+        phone_response = await cl.AskUserMessage(content="📞 Enter a valid phone number (10 digits):", timeout=300).send()
+        print("DEBUG: phone_response =", phone_response)  # Debugging
+        phone_number = phone_response.get("output", "").strip()
+
+        order_response = await cl.AskUserMessage(content="🆔 Enter a valid order ID:", timeout=300).send()
+        print("DEBUG: order_response =", order_response)  # Debugging
+        order_id = order_response.get("output", "").strip()
+
+        query = f"phone_number: {phone_number}\norder_id: {order_id}"
         extraction_result = llm.invoke(extractor_prompt)
+        print("DEBUG: extraction_result =", extraction_result)  # Debugging
+
         match = re.match(pattern, extraction_result.content)
-        if match:
-            validated_phone_number = match.group("phone_number")
-            validated_order_id = match.group("order_id")
-            if validated_phone_number != 'invalid' and validated_order_id != 'invalid':
-                inputs_are_ok = True
+        validated_phone_number = match.group(
+            "phone_number") if match else "invalid"
+        validated_order_id = match.group("order_id") if match else "invalid"
 
     state["user_phone_num"] = validated_phone_number
     state["user_order_id"] = validated_order_id
+
+    await cl.Message(content="✅ Thank you! Your details have been verified.").send()
 
     return state
 
@@ -574,8 +560,7 @@ def node_order_operation(state: MyState):
 
 def node_cancel_order(state: MyState):
     phone_number = state['user_phone_num']
-    result = cancel_order(state['user_order_id'], f"{
-                          phone_number[:3]}-{phone_number[3:6]}-{phone_number[6:]}")
+    result = cancel_order(state['user_order_id'], f"{phone_number[:3]}-{phone_number[3:6]}-{phone_number[6:]}")
     print("----- order cancelation --------")
     print(result)
     print("---------------------------------")
@@ -584,8 +569,9 @@ def node_cancel_order(state: MyState):
 
 
 def node_check_order_status(state: MyState):
+    phone_number = state['user_phone_num']
     result = check_order_status(
-        state['user_order_id'], state['user_phone_num'])
+        state['user_order_id'], f"{phone_number[:3]}-{phone_number[3:6]}-{phone_number[6:]}")
     print("-------------- check order status -----------------------")
     print(result)
     print("-----------------------------------------------------------")
