@@ -1,4 +1,4 @@
-query1: I want to know the status of order number 456.
+query1: I want to know the status of order number 5.
 inputs: 
 phone-num: 2223334444 order_id: 5
 not existed: 2165498436 order_id: 10

@@ -11,6 +11,7 @@ Deadline: Feb 2025
 How to run project:
 
 install dependencies: `$ pip install requiremenets.txt` 
+
 run: `$ chainlit run app.py`
 
 ---
