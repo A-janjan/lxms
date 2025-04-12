@@ -1,0 +1,14 @@
+model : o3-mini (chatgpt reasoning)
+
+problems from: leetcode
+---
+
+10 problems
+
+3 wrong
+7 correct
+
+---
+
+hard problems: 5
+hard problems were solved: 2
